@@ -1,0 +1,19 @@
+<% _.forEach(data,function(ele,i){%>
+<li>
+    <a href="/detail.html?item_id=<%-ele.item_id%>&type=<%-ele.type%>">
+            <div class="people-number"><%-ele.buyer_number_text%></div>
+            <div class="goods-topsmall">
+                <img src= <%-ele.image_url_set.single['800']%> >
+            </div>
+            <div class="goods-middle"><span class="goods-num"><%-ele.group_name_tag%></span><%-ele.short_name%></div>
+            <div class="goods-foot">
+                <div class="price-left"><span class="ct-price"><%-ele.jumei_price%></span>
+                    <span class="sc-price"></span><span class="jm-price"><%-ele.single_price%></span>
+                </div>
+                <div class="time-right timer">
+                    <span class="goods-btn">去开团</span>
+                </div>
+            </div>
+        </a>
+    </li>
+    <%})%>

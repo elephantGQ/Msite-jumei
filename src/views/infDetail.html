@@ -1,0 +1,94 @@
+<header>
+        <a href="http://localhost:8000" class="back"></a>
+        <div class="title">
+           <%-data.short_name%>
+           <%document.title=data.short_name%>
+        </div>
+        <a href="http://localhost:8000"  class="home"></a>
+    </header>
+    <div class="proDetail">
+        <div class="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                        <% _.forEach(data.image_url_set.single_many,function(ele){%>
+                    <div class="swiper-slide"><img src=<%-ele["800"]%>></div>
+                <%})%>
+                </div>
+                </div>
+        </div>
+        <div class="priceDetail">
+            <span class="jumeiPrice">￥29</span>
+            <del class="marketPrice">￥169</del>
+        </div>
+        <div class="proName">
+            <div class="proDesc">
+                <span>聚美自营</span>
+                <%-data.name%>
+                
+                
+            </div>
+        </div>
+        <div class="additionalInfo">
+                <div class="postage-wrap">
+                    <div class="postage-type">运费</div>
+                    <div class="postage-content">
+                        <span class="tip-word">本商品满299元或2件包邮（新疆部分区域除外）</span> 
+                        <span class="arrow-icon-right"></span></div>
+                </div>
+            
+        </div>
+        <div class="additionalInfo ">
+                <div class="postage-wrap noborder">
+                    <div class="postage-type">说明</div>
+                    <div class="postage-content">
+                        <div class="tip-word">
+                            <p>
+                                <span class="allright"></span>
+                                质量保证
+                            </p>
+                            <p>
+                                <span class="allright"></span>
+                                支持防伪验证
+                            </p>
+                            <p>
+                                <span class="allright"></span>
+                                七天拆封无条件退货
+                            </p>
+                            <p>
+                                <span class="allright"></span>
+                                支持分期
+                            </p>
+                        </div> 
+                        
+                    </div>
+                </div>
+        </div>
+        <a class="shop-wrap">
+            <div class="shopcontent">
+                <div class="shop-left">
+                    <img src="http://mp6.jmstatic.com/pop_store/000/003/3339_std/576a2780a537d_320_320.jpg?1482906525&amp;imageView2/2/w/320/q/90">
+                </div>
+                <div class="shop-right">
+                    <div class="shop-info">
+                        <p class="shopname"><%-data.brand_name%>旗舰店</p> <span class="jmicon">聚美自营</span> <span
+                            class="jmicon">官方授权</span>
+                    </div>
+                    <div class="shop-label">淋漓尽致的展现女性魅力</div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <p class="shop-btn">进入店铺<span id="demo16"></span></p>
+            </div>
+        </a>
+        <nav class="detailBox">
+            <ul>
+                <li class="select"><a href="">图片详情</a></li>
+                <li><a href="">商品参数</a></li>
+                <li><a href="">评价</a></li>
+            </ul>
+        </nav>
+       <div class="description">
+            
+       </div>  
+    </div>
+    

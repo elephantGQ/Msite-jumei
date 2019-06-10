@@ -1,0 +1,36 @@
+   
+    <% _.forEach(data,function(ele,i){%>
+        <% if(!ele.label){%>
+            <a href="/detail.html?item_id=<%-ele.item_id%>&type=<%-ele.type%>">
+                <div class="deal-item">
+                    <div class="product-img">
+                     <% if(ele.image_url_set.dx_image){%>
+                    <img src=<%-ele.image_url_set.dx_image.url["800"]%>>
+                    <%}else{%>
+                        <img src=<%-ele.image_url_set.single.url["800"]%>>
+                        <%}%>
+                    </div>
+                    <div class="product-detail">
+                        <div class="product-title">
+                           <%-ele.qrshare_product_name%>
+                        </div>
+                        <div class="price-wrap">
+                                <% if(ele.market_price != "-1"){ %>
+                                    
+                            <div class="price-list"><span class="jumei-price">¥<span><%-ele.jumei_price%></span></span> <span
+                                    class="del-price">¥<%-ele.market_price%></span>
+                            </div>
+                                    <%}else{%>
+                                        <div class="price-list"><span class="jumei-price">¥<span><%-ele.jumei_price%></span></span> <span
+                                            class="del-price"></span>
+                                    </div>
+                                    
+                                        <%}%>
+                            <div class="buy-num"><%-ele.deal_comments_number%>条评论</div>
+                        </div>
+                    </div>
+                </div>
+        </a>
+    
+        <%}%>
+        <%})%>

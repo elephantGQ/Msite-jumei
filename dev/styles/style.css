@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #666;
+  font-size: 14px;
+  background: white; }
+
+b {
+  font-weight: normal; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.box {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+  .box main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    position: relative; }
+    .box main .topNav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: #fff; }
+    .box main header {
+      height: 45.68px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-right: 12px; }
+      .box main header div {
+        flex: 1;
+        height: 30.98px;
+        padding: 0 20.063px;
+        display: flex; }
+        .box main header div .searchInput {
+          height: 30.98px;
+          flex: 1;
+          color: #999;
+          background: #F5F5F5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1.25rem; }
+          .box main header div .searchInput img {
+            height: 16.4px;
+            widows: 16.4px; }
+      .box main header .searchBtn img {
+        width: 24px;
+        height: 17.4px; }
+    .box main nav {
+      height: 44px;
+      border-bottom: solid .0625rem #eee; }
+      .box main nav b {
+        display: block;
+        height: 44px;
+        line-height: 44px;
+        font-size: 14px; }
+      .box main nav ul .select {
+        color: #fe4070;
+        border-bottom: .125rem solid #fe4070; }
+    .box main .bar {
+      height: 43.64px; }
+      .box main .bar ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; }
+        .box main .bar ul li {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column; }
+    .box main .wrap {
+      flex: 1;
+      background: #F5F5F5; }
+      .box main .wrap .container a {
+        display: block;
+        height: 130px;
+        /* float: 1; */
+        background: #fff;
+        margin-bottom: 8px; }
+        .box main .wrap .container a .deal-item {
+          position: relative; }
+          .box main .wrap .container a .deal-item img {
+            width: 375px;
+            height: 130px; }
+        .box main .wrap .container a .product-detail {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          display: flex;
+          padding: 0px 12px 0 160px;
+          color: #333;
+          font-size: 13px;
+          line-height: 17px;
+          flex-direction: column;
+          justify-content: space-around;
+          /* align-items: center; */ }
+          .box main .wrap .container a .product-detail .price-wrap .buy-num {
+            color: #999;
+            font-size: 11px;
+            padding-top: 3px; }
+          .box main .wrap .container a .product-detail .price-wrap .del-price {
+            color: #999;
+            font-size: 12px;
+            text-decoration: line-through; }
+          .box main .wrap .container a .product-detail .price-wrap .jumei-price {
+            color: #fe4070; }
+          .box main .wrap .container a .product-detail .price-wrap .jumei-price span {
+            color: #fe4070;
+            font-size: 20px; }
+    .box main .foot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px; }
+    .box main .foot img {
+      width: 16px;
+      height: 16px;
+      transition: transform 150ms;
+      -webkit-transition: transform 150ms; }
+    .box main .up {
+      transform: rotate(360deg) !important;
+      -webkit-transform: rotate(360deg) !important; }
+    .box main .down {
+      transform: rotate(180deg); }
+
+nav {
+  height: 48.98px;
+  display: flex; }
+  nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    nav ul li {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      nav ul li img {
+        height: 24.125px;
+        width: 26.64px;
+        padding: 2px; }
+      nav ul li b {
+        text-align: center;
+        font-size: 10px; }
+
+.select {
+  color: #fe4070; }
