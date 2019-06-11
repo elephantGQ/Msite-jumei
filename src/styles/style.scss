@@ -20,6 +20,7 @@ ul,li{
 }
 a{
     text-decoration: none;
+    color: #999;
 }
 .box{
     height: 100%;
@@ -45,6 +46,8 @@ a{
             align-items: center;
             text-align: center;
             padding-right: 12px;
+            
+            background: white;
             div{
                 flex: 1;
                 height: 30.98px;
@@ -89,6 +92,8 @@ a{
         }
         .bar{
             height: 43.64px;
+            background: white;
+
             ul{
                 width: 100%;
                 height: 100%;
@@ -122,7 +127,6 @@ a{
                 .deal-item{
                     position: relative;
                     img{
-                        width: 375px;
                         height: 130px;
                     }
                 }
@@ -217,8 +221,11 @@ nav{
     }
 }
 
-.select{
-    color:rgb(254, 64, 112);
-}
 
+.select {
+    // background: #e7f3f0;
+    b, i ,a{
+        color:rgb(254, 64, 112);
+    }
+  }
 

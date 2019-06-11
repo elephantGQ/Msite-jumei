@@ -18,7 +18,8 @@ ul, li {
   list-style: none; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #999; }
 
 .box {
   height: 100%;
@@ -42,7 +43,8 @@ a {
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding-right: 12px; }
+      padding-right: 12px;
+      background: white; }
       .box main header div {
         flex: 1;
         height: 30.98px;
@@ -75,7 +77,8 @@ a {
         color: #fe4070;
         border-bottom: .125rem solid #fe4070; }
     .box main .bar {
-      height: 43.64px; }
+      height: 43.64px;
+      background: white; }
       .box main .bar ul {
         width: 100%;
         height: 100%;
@@ -101,7 +104,6 @@ a {
         .box main .wrap .container a .deal-item {
           position: relative; }
           .box main .wrap .container a .deal-item img {
-            width: 375px;
             height: 130px; }
         .box main .wrap .container a .product-detail {
           position: absolute;
@@ -168,5 +170,5 @@ nav {
         text-align: center;
         font-size: 10px; }
 
-.select {
+.select b, .select i, .select a {
   color: #fe4070; }

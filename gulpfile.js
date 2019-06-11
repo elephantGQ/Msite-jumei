@@ -34,9 +34,9 @@ const del=require ('del')
         entry: {
           app: ['./src/app.js'],
           detail: ['./src/detail.js'],
-          yiqituan: ['./src/yiqituan.js'],
-          cart: ['./src/cart.js'],
-          myAccount: ['./src/myAccount.js'],
+          search: ['./src/search.js'],
+          searchResult: ['./src/searchResult.js'],
+          
         },
   
         output: {
@@ -114,6 +114,17 @@ function webserver() {
               '^/jumei': ''
             }
           }),
+          proxy('/searchSuggest', {
+            target: ' http://mobile.jumei.com',
+            changeOrigin: true, // 访问不同的域名，需要配置成 true
+            headers:{
+              "Cookie":"guide_download_show=1; has_download=1; first_visit=1; "
+            },
+            pathRewrite: {
+              '^/searchSuggest': ''
+            }
+          }),
+          /*
           proxy('/staticDetail', {
             target: 'http://h5.jumei.com/product/ajaxStaticDetail',
             changeOrigin: true, // 访问不同的域名，需要配置成 true
@@ -141,7 +152,7 @@ function webserver() {
             pathRewrite: {
               '^/recommend': ''
             }
-          })
+          })*/
         ]
       }))
   }

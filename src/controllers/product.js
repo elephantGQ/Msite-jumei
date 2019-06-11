@@ -1,7 +1,8 @@
 const productListTpl = require('../views/product.list.html')
 import fetch from '../models/fetch'
-let page = 0;
+
 const renderList = async () => {
+    let page = 0;
     let data = await fetch.get(`/jumei/index/ajaxDealactList?card_id=4057&page=${++page}`)
     let compiled = _.template(productListTpl)
     let str = compiled({

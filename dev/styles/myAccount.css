@@ -1,28 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  color: #666;
-  font-size: 14px;
-  background: #f2f2f2; }
-
-b {
-  font-weight: normal; }
-
-ul, li {
-  list-style: none; }
-
-a {
-  text-decoration: none; }
-
-.noborder {
-  border: 0 !important; }
-
 .jmicon {
   font-size: 10px;
   padding: 1px 4px;
@@ -37,116 +12,170 @@ a {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: auto; }
-    .box main .wrap {
+    overflow: hidden;
+    background: #f5f5f5; }
+    .box main .container {
       flex: 1;
-      overflow: auto;
-      display: flex;
+      width: 100%;
       flex-direction: column; }
-      .box main .wrap header {
-        height: 44px;
+      .box main .container .useunlogin {
+        background-image: linear-gradient(-204deg, #fd465f 0, #fc5e9f 100%);
+        width: 100%;
+        height: 158px;
         display: flex;
-        background-image: linear-gradient(-204deg, #fd465f 0, #fc5e9f 277%); }
-        .box main .wrap header .title {
-          flex: 1;
-          text-align: center;
-          line-height: 44px;
-          font-size: 16px;
-          color: white; }
-        .box main .wrap header a {
-          width: 37.5px;
-          background: pink; }
-        .box main .wrap header .back {
-          background: url(../images/back_white_bg.png) center no-repeat;
-          background-size: 24px 24px; }
-        .box main .wrap header .home {
-          background: url(../images/home_white_bg.png) center no-repeat;
-          background-size: 24px 24px; }
-      .box main .wrap .container {
-        flex: 1;
-        width: 100%; }
-        .box main .wrap .container .useunlogin {
-          background-image: linear-gradient(-204deg, #fd465f 0, #fc5e9f 100%);
+        flex-direction: column;
+        padding: 20px 0 20px; }
+        .box main .container .useunlogin .userlogo {
           width: 100%;
-          height: 158px;
+          height: 60px;
+          background: url(../images/noportrait.png) no-repeat center center;
+          background-size: 60px 60px; }
+        .box main .container .useunlogin span {
+          width: 2px;
+          background: #fff; }
+        .box main .container .useunlogin .userOpt {
           display: flex;
-          flex-direction: column;
-          padding: 20px 0 20px; }
-          .box main .wrap .container .useunlogin .userlogo {
-            width: 100%;
-            height: 60px;
-            background: url(../images/noportrait.png) no-repeat center center;
-            background-size: 60px 60px; }
-          .box main .wrap .container .useunlogin span {
-            width: 2px;
-            background: #fff; }
-          .box main .wrap .container .useunlogin .userOpt {
-            display: flex;
-            padding-top: 30px; }
-            .box main .wrap .container .useunlogin .userOpt a {
-              flex: 1;
-              line-height: 25px;
-              color: #fff;
-              font-weight: 700;
-              font-size: 18px;
-              text-decoration: none;
-              display: inline-block;
-              text-align: center;
-              width: 95px; }
-        .box main .wrap .container .order {
-          margin-top: 12px;
-          background: white; }
-          .box main .wrap .container .order .orderTitle {
-            padding-left: 8px;
-            border-bottom: 1px solid #eaeaea;
-            height: 34px;
-            line-height: 34px;
-            font-size: 13px; }
-            .box main .wrap .container .order .orderTitle .block-title-icon {
+          padding-top: 30px; }
+          .box main .container .useunlogin .userOpt a {
+            flex: 1;
+            line-height: 25px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 95px; }
+      .box main .container .order {
+        margin-top: 12px;
+        background: white;
+        width: 100%; }
+        .box main .container .order .orderTitle {
+          padding-left: 8px;
+          border-bottom: 1px solid #eaeaea;
+          height: 34px;
+          line-height: 34px;
+          font-size: 13px; }
+          .box main .container .order .orderTitle .block-title-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            background-size: 20px;
+            margin-right: 10px;
+            background: url(../images/myorder.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .order .orderTitle .myfund {
+            background: url(../images/myfund.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .order .orderTitle .block-title-nav {
+            float: right;
+            text-decoration: none;
+            color: #999;
+            font-size: 12px;
+            margin-right: 5px; }
+            .box main .container .order .orderTitle .block-title-nav .arrow-right {
+              background-image: url(../images/advance_bg.png);
+              background-size: 20px;
               display: inline-block;
               vertical-align: middle;
               width: 20px;
-              height: 20px;
-              background-size: 20px;
-              margin-right: 10px;
-              background: url(../images/myorder.png) no-repeat;
+              height: 20px; }
+        .box main .container .order .orderContent {
+          display: flex;
+          width: 100%; }
+          .box main .container .order .orderContent .block-item {
+            flex: 1;
+            text-align: center;
+            display: inline-block;
+            margin: 0;
+            padding: 10px 0;
+            text-decoration: none;
+            font-size: 12px;
+            color: #666; }
+            .box main .container .order .orderContent .block-item i {
+              display: block;
+              width: 24px;
+              height: 24px;
+              margin: 5px auto;
+              background-size: 24px; }
+            .box main .container .order .orderContent .block-item .unpaid {
+              background: url(../images/unpaid.png) no-repeat;
               background-size: 100% 100%; }
-            .box main .wrap .container .order .orderTitle .block-title-nav {
-              float: right;
-              text-decoration: none;
-              color: #999;
-              font-size: 12px;
-              margin-right: 5px; }
-              .box main .wrap .container .order .orderTitle .block-title-nav .arrow-right {
-                background-image: url(../images/advance_bg.png);
-                background-size: 20px;
-                display: inline-block;
-                vertical-align: middle;
-                width: 20px;
-                height: 20px; }
-    .box main nav {
-      height: 48.98px;
+            .box main .container .order .orderContent .block-item .unconfirm {
+              background: url(../images/unconfirm.png) no-repeat;
+              background-size: 100% 100%; }
+            .box main .container .order .orderContent .block-item .uncomment {
+              background: url(../images/uncomment.png) no-repeat;
+              background-size: 100% 100%; }
+            .box main .container .order .orderContent .block-item .refund {
+              background: url(../images/refund.png) no-repeat;
+              background-size: 100% 100%; }
+      .box main .container .block {
+        background: #fff;
+        margin-top: 12px; }
+        .box main .container .block .list-item {
+          display: block;
+          text-decoration: none;
+          color: #333;
+          padding-left: 8px;
+          border-bottom: 1px solid #eaeaea;
+          height: 34px;
+          line-height: 34px;
+          font-size: 13px; }
+          .box main .container .block .list-item .list-item-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            background-size: 20px;
+            margin-right: 10px; }
+          .box main .container .block .list-item .rmaservice {
+            background: url(../images/rmaservice.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .block .list-item .feedback {
+            background: url(../images/feedback.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .block .list-item .address {
+            background: url(../images/address.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .block .list-item .logout {
+            background: url(../images/logout.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .block .list-item .tel {
+            background: url(../images/tel.png) no-repeat;
+            background-size: 100% 100%; }
+          .box main .container .block .list-item .arrow-right {
+            float: right;
+            margin-top: 6px;
+            margin-right: 6px;
+            background-image: url(../images/advance_bg.png);
+            background-size: 20px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px; }
+  .box nav {
+    height: 48.98px;
+    display: flex;
+    background: #fff; }
+    .box nav ul {
+      width: 100%;
+      height: 100%;
       display: flex;
-      background: #fff; }
-      .box main nav ul {
-        width: 100%;
-        height: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .box nav ul li {
+        flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center; }
-        .box main nav ul li {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column; }
-          .box main nav ul li img {
-            height: 24.125px;
-            width: 26.64px;
-            padding: 2px; }
-          .box main nav ul li b {
-            text-align: center;
-            font-size: 10px; }
-    .box main .select {
-      color: #fe4070; }
+        flex-direction: column; }
+        .box nav ul li img {
+          height: 24.125px;
+          width: 26.64px;
+          padding: 2px; }
+        .box nav ul li b {
+          text-align: center;
+          font-size: 10px; }

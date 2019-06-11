@@ -1,26 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html,body{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    color:#666;
-    font-size: 14px;
-    background: white;
-    
-}
-b{
-    font-weight: normal;
-}
-ul,li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
+
 .noborder{
     border: 0 !important;
 }
@@ -38,15 +16,16 @@ a{
         height: 100%;
         display: flex;
         flex-direction: column;
-        overflow: auto;
-        .wrap{
+        overflow: hidden;
+        .cartWrap{
             flex: 1;
             overflow: auto;
             display: flex;
             flex-direction: column;
-            header{
+            .head{
                 height: 44px;
                 display: flex;
+                background: white;
                 .title{
                     flex: 1;
                     text-align: center;
@@ -54,6 +33,7 @@ a{
                     font-size: 14px;
                 }
                 a{
+                    display: block;
                     width: 37.5px;
                     background: pink;
                 }
@@ -103,37 +83,6 @@ a{
         }
         
     }
-    nav{
-        height: 48.98px;
-        display: flex;
-        ul{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            li{
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                
-                img{
-                    height: 24.125px;
-                    width: 26.64px;
-                    padding:2px; 
-                }
-                b{
-                    text-align: center;
-                    font-size: 10px;
-                }
-            }
-        }
-    }
     
-    .select{
-        color:rgb(254, 64, 112);
-    }
+    
 }

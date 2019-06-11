@@ -1,15 +1,20 @@
-// http://localhost:8000/tuanInit?tab=coutuan_home&page=1&per_page=20
-const tuanListTpl = require('../views/tuanList.html')
-import fetch from '../models/fetch'
-
-const renderList = async () => {
-    let page = 0;
-    let data = await fetch.get(`jumei/yiqituan/tab_list?tab=coutuan_home&page=${++page}&per_page=20`)
-    let compiled = _.template(tuanListTpl)
+//建议的api
+//http://mobile.jumei.com/msapi/search/suggestion.json?keyword=%E8%A1%A5%E6%B0%B4
+//搜索出来的api
+//https://h5.jumei.com/search/index?search=%E9%9D%A2%E8%86%9C&page=1&ajax=get
+import fetch from './models/fetch'
+const suggestTpl = require('./views/searchResultList.html')
+let reder= async function(){
+    let page=0;
+    console.log("开始了");
+    //http://localhost:8000/jumei/search/index?search=%E9%9D%A2%E8%86%9C%E8%A1%A5%E6%B0%B4&page=1&ajax=get
+    let req1 = await fetch.get(`/jumei/search/index${location.search}&page=${++page}&ajax=get`)
+    $(".otitle").html(req1.search)
+    let compiled = _.template(suggestTpl)
     let str = compiled({
-        "data": data.data
+        "data": req1.data.item_list
     });
-    $(".container").html(str);
+    $(".searchList").html(str);
     // Better scroll 实例化
     let bScroll = new BScroll('main', {
         probeType: 1,
@@ -40,12 +45,13 @@ const renderList = async () => {
             foot.attr('src', '/images/ajax-loader.gif')
             // 异步加载数据
 
-            let data = await fetch.get(`jumei/yiqituan/tab_list?tab=coutuan_home&page=${++page}&per_page=20`)
-            let compiled = _.template(tuanListTpl)
+            let data = await fetch.get(`/jumei/search/index${location.search}&page=${++page}&ajax=get`)
+            console.log(data)
+            let compiled = _.template(suggestTpl)
             let str = compiled({
-                "data": data.data
+                "data": data.data.item_list
             });
-            $(".container").html($(".container").html() + str);
+            $(".searchList").html($(".searchList").html() + str);
             bScroll.refresh() // 重新计算 better-scroll，当 DOM 结构发生变化的时候务必要调用确保滚动的效果正常。
             bScroll.scrollTo(0, bScroll.maxScrollY + 40)
             foot.removeClass('down')
@@ -54,7 +60,4 @@ const renderList = async () => {
         }
     })
 }
-
-export default {
-    renderList
-}
+reder();

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -119,30 +119,6 @@ eval("module.exports = function (module) {\n  if (!module.webpackPolyfill) {\n  
 
 /***/ }),
 
-/***/ "./src/controllers/infDetail.js":
-/*!**************************************!*\
-  !*** ./src/controllers/infDetail.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/fetch */ \"./src/models/fetch.js\");\n\n\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\nvar productListTpl = __webpack_require__(/*! ../views/infDetail.html */ \"./src/views/infDetail.html\");\n\n\nvar search = window.location.search;\n\nvar renderInfo =\n/*#__PURE__*/\nfunction () {\n  var _ref = _asyncToGenerator(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {\n    var req1, compiled, data, str, mySwiper, req;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.next = 2;\n            return _models_fetch__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get(\"/jumei/product/ajaxStaticDetail\".concat(search));\n\n          case 2:\n            req1 = _context.sent;\n            compiled = _.template(productListTpl); // console.log(compiled)\n\n            data = req1.data;\n            str = compiled({\n              \"data\": data\n            });\n            $(\".wrap\").html(str);\n            mySwiper = new Swiper('.swiper-container', {});\n            $(\".description\").html(req1.data.description_info.description);\n            _context.next = 11;\n            return _models_fetch__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get(\"/jumei/product/ajaxDynamicDetail\".concat(search));\n\n          case 11:\n            req = _context.sent;\n            console.log(req);\n            console.log(req.data.result.size[0].jumei_price);\n            $(\".jumeiPrice\").html(\"￥\" + req.data.result.size[0].jumei_price);\n            $(\".marketPrice\").html(\"￥\" + req.data.result.size[0].market_price);\n            $(\".shop-label\").html(req.data.result.shop_info.store_content);\n            $(\".shop-left>img\").prop(\"src\", req.data.result.shop_info.logo_url['800']);\n\n          case 18:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function renderInfo() {\n    return _ref.apply(this, arguments);\n  };\n}();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  renderInfo: renderInfo\n});\n\n//# sourceURL=webpack:///./src/controllers/infDetail.js?");
-
-/***/ }),
-
-/***/ "./src/detail.js":
-/*!***********************!*\
-  !*** ./src/detail.js ***!
-  \***********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_infDetail__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/infDetail */ \"./src/controllers/infDetail.js\");\n\n\nvar indexTpl = __webpack_require__(/*! ./views/detail.html */ \"./src/views/detail.html\");\n\nvar compiled = _.template(indexTpl);\n\nvar str = compiled({});\n$(\".box\").html(str);\n_controllers_infDetail__WEBPACK_IMPORTED_MODULE_0__[\"default\"].renderInfo();\n\n//# sourceURL=webpack:///./src/detail.js?");
-
-/***/ }),
-
 /***/ "./src/models/fetch.js":
 /*!*****************************!*\
   !*** ./src/models/fetch.js ***!
@@ -155,36 +131,37 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
-/***/ "./src/views/detail.html":
-/*!*******************************!*\
-  !*** ./src/views/detail.html ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<main>        <div class=\\\"wrap\\\">                   </div>        <footer>            <nav>                    <div class=\\\"left\\\">                            <a href=\\\"/index.html\\\">                                <img src=\\\"images/store.png\\\" alt=\\\"\\\">                                <b>店铺</b>                            </a>                            <a href=\\\"/index.html\\\">                                    <img src=\\\"images/cart.png\\\" alt=\\\"\\\">                                    <b>购物车</b>                            </a>                        </div>                        <div class=\\\"right\\\">                                <a href=\\\"\\\">加入购物车</a>                                <a href=\\\"\\\">立即购买</a>                        </div>            </nav>                   </footer>    </main>\"\n\n//# sourceURL=webpack:///./src/views/detail.html?");
-
-/***/ }),
-
-/***/ "./src/views/infDetail.html":
-/*!**********************************!*\
-  !*** ./src/views/infDetail.html ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = \"<header>        <a href=\\\"/index.html\\\" class=\\\"back\\\"></a>        <div class=\\\"title\\\">           <%-data.short_name%>           <%document.title=data.short_name%>        </div>        <a href=\\\"/index.html\\\"  class=\\\"home\\\"></a>    </header>    <div class=\\\"proDetail\\\">        <div class=\\\"swiper\\\">            <div class=\\\"swiper-container\\\">                <div class=\\\"swiper-wrapper\\\">                        <% _.forEach(data.image_url_set.single_many,function(ele){%>                    <div class=\\\"swiper-slide\\\"><img src=<%-ele[\\\"800\\\"]%>></div>                <%})%>                </div>                </div>        </div>        <div class=\\\"priceDetail\\\">            <span class=\\\"jumeiPrice\\\">???</span>            <del class=\\\"marketPrice\\\">???</del>        </div>        <div class=\\\"proName\\\">            <div class=\\\"proDesc\\\">                <span>聚美自营</span>                <%-data.name%>                                            </div>        </div>        <div class=\\\"additionalInfo\\\">                <div class=\\\"postage-wrap\\\">                    <div class=\\\"postage-type\\\">运费</div>                    <div class=\\\"postage-content\\\">                        <span class=\\\"tip-word\\\">本商品满299元或2件包邮（新疆部分区域除外）</span>                         <span class=\\\"arrow-icon-right\\\"></span></div>                </div>                    </div>        <div class=\\\"additionalInfo \\\">                <div class=\\\"postage-wrap noborder\\\">                    <div class=\\\"postage-type\\\">说明</div>                    <div class=\\\"postage-content\\\">                        <div class=\\\"tip-word\\\">                            <p>                                <span class=\\\"allright\\\"></span>                                质量保证                            </p>                            <p>                                <span class=\\\"allright\\\"></span>                                支持防伪验证                            </p>                            <p>                                <span class=\\\"allright\\\"></span>                                七天拆封无条件退货                            </p>                            <p>                                <span class=\\\"allright\\\"></span>                                支持分期                            </p>                        </div>                                             </div>                </div>        </div>        <a class=\\\"shop-wrap\\\">            <div class=\\\"shopcontent\\\">                <div class=\\\"shop-left\\\">                    <img src=\\\"http://mp6.jmstatic.com/pop_store/000/003/3339_std/576a2780a537d_320_320.jpg?1482906525&amp;imageView2/2/w/320/q/90\\\">                </div>                <div class=\\\"shop-right\\\">                    <div class=\\\"shop-info\\\">                        <p class=\\\"shopname\\\"><%-data.brand_name%>旗舰店</p> <span class=\\\"jmicon\\\">聚美自营</span> <span                            class=\\\"jmicon\\\">官方授权</span>                    </div>                    <div class=\\\"shop-label\\\">淋漓尽致的展现女性魅力</div>                </div>            </div>            <div class=\\\"btn-wrap\\\">                <p class=\\\"shop-btn\\\">进入店铺<span id=\\\"demo16\\\"></span></p>            </div>        </a>        <nav class=\\\"detailBox\\\">            <ul>                <li class=\\\"select\\\"><a href=\\\"\\\">图片详情</a></li>                <li><a href=\\\"\\\">商品参数</a></li>                <li><a href=\\\"\\\">评价</a></li>            </ul>        </nav>       <div class=\\\"description\\\">                   </div>      </div>    \"\n\n//# sourceURL=webpack:///./src/views/infDetail.html?");
-
-/***/ }),
-
-/***/ 1:
+/***/ "./src/searchResult.js":
 /*!*****************************!*\
-  !*** multi ./src/detail.js ***!
+  !*** ./src/searchResult.js ***!
   \*****************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _models_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./models/fetch */ \"./src/models/fetch.js\");\n\n\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n//建议的api\n//http://mobile.jumei.com/msapi/search/suggestion.json?keyword=%E8%A1%A5%E6%B0%B4\n//搜索出来的api\n//https://h5.jumei.com/search/index?search=%E9%9D%A2%E8%86%9C&page=1&ajax=get\n\n\nvar suggestTpl = __webpack_require__(/*! ./views/searchResultList.html */ \"./src/views/searchResultList.html\");\n\nvar reder =\n/*#__PURE__*/\nfunction () {\n  var _ref = _asyncToGenerator(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {\n    var page, req1, compiled, str, bScroll, foot, bottomImgHasClass;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            page = 0;\n            console.log(\"开始了\"); //http://localhost:8000/jumei/search/index?search=%E9%9D%A2%E8%86%9C%E8%A1%A5%E6%B0%B4&page=1&ajax=get\n\n            _context2.next = 4;\n            return _models_fetch__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get(\"/jumei/search/index\".concat(location.search, \"&page=\").concat(++page, \"&ajax=get\"));\n\n          case 4:\n            req1 = _context2.sent;\n            $(\".otitle\").html(req1.search);\n            compiled = _.template(suggestTpl);\n            str = compiled({\n              \"data\": req1.data.item_list\n            });\n            $(\".searchList\").html(str); // Better scroll 实例化\n\n            bScroll = new BScroll('main', {\n              probeType: 1,\n              click: true\n            });\n            foot = $('.foot img'), bottomImgHasClass = foot.hasClass('down'); // 绑定滑动事件\n\n            bScroll.on('scroll', function () {\n              var y = this.y;\n              var maxY = this.maxScrollY - y; // $(\".topNav\").css({\n              //     top:-y\n              // })\n              // 上拉，当滚动到最底部时候触发\n\n              if (maxY >= 0) {\n                !bottomImgHasClass && foot.addClass('down');\n                return;\n              }\n            });\n            bScroll.on('scrollEnd',\n            /*#__PURE__*/\n            _asyncToGenerator(\n            /*#__PURE__*/\n            _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {\n              var maxY, data, _compiled, _str;\n\n              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n                while (1) {\n                  switch (_context.prev = _context.next) {\n                    case 0:\n                      // 下拉加载处理\n                      maxY = this.maxScrollY - this.y;\n\n                      if (!(maxY > -40 && maxY < 0)) {\n                        _context.next = 6;\n                        break;\n                      }\n\n                      this.scrollTo(0, this.maxScrollY + 40);\n                      foot.removeClass('down');\n                      _context.next = 19;\n                      break;\n\n                    case 6:\n                      if (!(maxY >= 0)) {\n                        _context.next = 19;\n                        break;\n                      }\n\n                      foot.attr('src', '/images/ajax-loader.gif'); // 异步加载数据\n\n                      _context.next = 10;\n                      return _models_fetch__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get(\"/jumei/search/index\".concat(location.search, \"&page=\").concat(++page, \"&ajax=get\"));\n\n                    case 10:\n                      data = _context.sent;\n                      console.log(data);\n                      _compiled = _.template(suggestTpl);\n                      _str = _compiled({\n                        \"data\": data.data.item_list\n                      });\n                      $(\".searchList\").html($(\".searchList\").html() + _str);\n                      bScroll.refresh(); // 重新计算 better-scroll，当 DOM 结构发生变化的时候务必要调用确保滚动的效果正常。\n\n                      bScroll.scrollTo(0, bScroll.maxScrollY + 40);\n                      foot.removeClass('down');\n                      foot.attr('src', '/images/arrow.png');\n\n                    case 19:\n                    case \"end\":\n                      return _context.stop();\n                  }\n                }\n              }, _callee, this);\n            })));\n\n          case 13:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n\n  return function reder() {\n    return _ref.apply(this, arguments);\n  };\n}();\n\nreder();\n\n//# sourceURL=webpack:///./src/searchResult.js?");
+
+/***/ }),
+
+/***/ "./src/views/searchResultList.html":
+/*!*****************************************!*\
+  !*** ./src/views/searchResultList.html ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"       <% _.forEach(data,function(ele,i){%>        <% if(!ele.label){%>            <a href=\\\"/detail.html?item_id=<%-ele.item_id%>&type=<%-ele.type%>\\\">                <div class=\\\"deal-item\\\">                    <div class=\\\"product-img\\\">                     <% if(ele.image_url_set.dx_image){%>                        <img src=<%-ele.image_url_set.single[\\\"320\\\"]%> >                    <%}else{%>                        <img src=<%-ele.image_url_set.single[\\\"320\\\"]%> >                        <%}%>                    </div>                    <div class=\\\"product-detail\\\">                        <div class=\\\"product-title\\\">                           <%-ele.middle_name%>                        </div>                        <div class=\\\"price-wrap\\\">                                <% if(ele.market_price != \\\"-1\\\"){ %>                                                                <div class=\\\"price-list\\\"><span class=\\\"jumei-price\\\">¥<span><%-ele.jumei_price%></span></span> <span                                    class=\\\"del-price\\\">¥<%-ele.market_price%></span>                            </div>                                    <%}else{%>                                        <div class=\\\"price-list\\\"><span class=\\\"jumei-price\\\">¥<span><%-ele.jumei_price%></span></span> <span                                            class=\\\"del-price\\\"></span>                                    </div>                                                                            <%}%>                        </div>                    </div>                </div>        </a>            <%}%>        <%})%>\"\n\n//# sourceURL=webpack:///./src/views/searchResultList.html?");
+
+/***/ }),
+
+/***/ 3:
+/*!***********************************!*\
+  !*** multi ./src/searchResult.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! ./src/detail.js */\"./src/detail.js\");\n\n\n//# sourceURL=webpack:///multi_./src/detail.js?");
+eval("module.exports = __webpack_require__(/*! ./src/searchResult.js */\"./src/searchResult.js\");\n\n\n//# sourceURL=webpack:///multi_./src/searchResult.js?");
 
 /***/ })
 

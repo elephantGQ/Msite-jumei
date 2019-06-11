@@ -1,25 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  color: #666;
-  font-size: 14px;
-  background: white; }
-
-b {
-  font-weight: normal; }
-
-ul, li {
-  list-style: none; }
-
-a {
-  text-decoration: none; }
-
 .noborder {
   border: 0 !important; }
 
@@ -37,48 +15,50 @@ a {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: auto; }
-    .box main .wrap {
+    overflow: hidden; }
+    .box main .cartWrap {
       flex: 1;
       overflow: auto;
       display: flex;
       flex-direction: column; }
-      .box main .wrap header {
+      .box main .cartWrap .head {
         height: 44px;
-        display: flex; }
-        .box main .wrap header .title {
+        display: flex;
+        background: white; }
+        .box main .cartWrap .head .title {
           flex: 1;
           text-align: center;
           line-height: 44px;
           font-size: 14px; }
-        .box main .wrap header a {
+        .box main .cartWrap .head a {
+          display: block;
           width: 37.5px;
           background: pink; }
-        .box main .wrap header .back {
+        .box main .cartWrap .head .back {
           background: url(../images/back.png) center no-repeat;
           background-size: 5.6px 11.2px; }
-        .box main .wrap header .home {
+        .box main .cartWrap .head .home {
           background: url(../images/home.png) center no-repeat;
           background-size: 20px 20px; }
-      .box main .wrap .container {
+      .box main .cartWrap .container {
         flex: 1;
         display: flex; }
-        .box main .wrap .container .cart-no-goods {
+        .box main .cartWrap .container .cart-no-goods {
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; }
-          .box main .wrap .container .cart-no-goods .oops {
+          .box main .cartWrap .container .cart-no-goods .oops {
             width: 85.9px;
             height: 82px;
             background: url(../images/no-card-oops.png) no-repeat;
             background-size: 100% 100%; }
-          .box main .wrap .container .cart-no-goods .empty-cart {
+          .box main .cartWrap .container .cart-no-goods .empty-cart {
             padding: 16px 12px;
             font-size: 14px;
             color: #333; }
-          .box main .wrap .container .cart-no-goods .go-stroll {
+          .box main .cartWrap .container .cart-no-goods .go-stroll {
             width: 124.99px;
             height: 36px;
             border-radius: 18px;
@@ -88,28 +68,3 @@ a {
             text-align: center;
             margin-top: 5px;
             font-size: 13px; }
-  .box nav {
-    height: 48.98px;
-    display: flex; }
-    .box nav ul {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center; }
-      .box nav ul li {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; }
-        .box nav ul li img {
-          height: 24.125px;
-          width: 26.64px;
-          padding: 2px; }
-        .box nav ul li b {
-          text-align: center;
-          font-size: 10px; }
-  .box .select {
-    color: #fe4070; }

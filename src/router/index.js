@@ -1,9 +1,8 @@
-import index from '../controllers/index'
+
 import home from '../controllers/home'
-import position from '../controllers/position'
-import search from '../controllers/search'
-import profile from '../controllers/profile'
-import details from '../controllers/details'
+import yiqituan from '../controllers/yiqituan'
+import cart from '../controllers/cart'
+import myAccount from '../controllers/myAccount'
 
 export default class Router {
   constructor(obj) {
@@ -11,12 +10,10 @@ export default class Router {
     // this.mode = 'history'
     // 路由配置
     this.routes = {
-      '/index': index,
-      '/index/home': home,
-      '/index/details': details,
-      '/index/home/position': position,
-      '/index/home/search': search,
-      '/index/home/profile': profile
+      '/home': home,
+      '/yiqituan': yiqituan,
+      '/cart': cart,
+      '/myAccount': myAccount,
     }
     // 组件挂载根元素
     this.root = $('#main')
@@ -26,7 +23,7 @@ export default class Router {
   }
 
   init() {
-    index.render()
+    home.render()
     if (this.mode === 'hash') {
       window.addEventListener('load', this.hashRefresh.bind(this), false);
       window.addEventListener('hashchange', this.hashRefresh.bind(this), false);
@@ -73,7 +70,7 @@ export default class Router {
       var oldURL = e.oldURL.split('#')[1];
     }
     // 获取当前路径,默认'/index'
-    var currentURL = location.hash.slice(1).split('?')[0] || '/index/home/position';
+    var currentURL = location.hash.slice(1).split('?')[0] || '/home';
     this.loadView(currentURL)
   }
   /**
@@ -96,7 +93,7 @@ export default class Router {
       history.replaceState({
         path: '/'
       }, null, '/')
-      currentURL = '/position'
+      currentURL = '/home'
     }
     // 多级链接拆分为数组,遍历依次加载
     this.currentURLlist = currentURL.slice(1).split('/')
@@ -215,6 +212,6 @@ export default class Router {
    * @param  item 当前router对象
    */
   navActive(item) {
-    $('nav a').filter(`[href="#${item}"]`).closest('li').addClass('active').siblings().removeClass('active')
+    $('nav a').filter(`[href="#${item}"]`).closest('li').addClass('select').siblings().removeClass('select')
   }
 }
